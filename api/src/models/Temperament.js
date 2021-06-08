@@ -6,5 +6,5 @@ module.exports = (sequelize) => {
         nameT: {
           type: DataTypes.STRING
         },
-      })
+      },{timestamps: false})
 };

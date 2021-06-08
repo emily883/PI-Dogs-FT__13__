@@ -20,6 +20,7 @@ module.exports = (sequelize) => {
       type: DataTypes.INTEGER,
       // allowNull: true,
     }
-  });
+  },
+  {timestamps: false});
 
 };
