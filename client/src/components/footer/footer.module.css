@@ -1,0 +1,33 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+    
+.icon{
+    list-style-type: none;
+    display:inline-flex;
+    align-items: right;
+}
+span{
+    color: #fff;
+}
+
+.icon li a {
+    color: #fff;
+}
+
+.icons{
+    display: inline-block;
+}
+
+.footerContainer{
+    background-color: rgb(13, 4, 143);
+    display: block;
+}
+
+img{
+    width: 55px;
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}

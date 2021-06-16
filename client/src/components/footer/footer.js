@@ -1,11 +1,12 @@
 import React from "react";
 import style from "./footer.module.css";
 import dogLogo from "./DogLogo.png";
+import { FaInstagram, FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function footer() {
   return (
     <div className={style.footerContainer}>
-      <img src={dogLogo} alt="Dog logo"></img>
+      <img src={dogLogo} alt="Dog logo" ></img>
       <span>Emily Cruz, 2021</span>
       <div className={style.icons}>
         <ul className={style.icon}>
@@ -13,37 +14,26 @@ export default function footer() {
             <a
               href="https://github.com/emily883"
               target="_blank"
-              class="fa fa-github"
-              aria-hidden="true"
+              class="fa-github"
               rel="noreferrer"
-            />
+            > <FaGithub /></a>
           </li>
           <li>
             <a
-              href=""
+              href="https://www.linkedin.com/in/emilycruz/"
               target="_blank"
-              class="fa fa-linkedin"
-              aria-hidden="true"
+              class="fa-linkedin"
               rel="noreferrer"
-            />
+            > <FaLinkedin /></a>
           </li>
           <li>
             <a
-              href=""
+              href="https://www.instagram.com/mili_panda_880/"
               target="_blank"
-              class="fa fa-instagram"
+              class="fa-instagram"
               aria-hidden="true"
               rel="noreferrer"
-            />
-          </li>
-          <li>
-            <a
-              href=""
-              target="_blank"
-              class="fa fa-twitter"
-              aria-hidden="true"
-              rel="noreferrer"
-            />
+            > <FaInstagram /></a>
           </li>
         </ul>
       </div>

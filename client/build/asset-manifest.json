@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/static/css/main.7b928238.chunk.css",
+    "main.js": "/static/js/main.abd292cf.chunk.js",
+    "main.js.map": "/static/js/main.abd292cf.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.0151b433.js",
+    "runtime-main.js.map": "/static/js/runtime-main.0151b433.js.map",
+    "static/js/2.0fb29e07.chunk.js": "/static/js/2.0fb29e07.chunk.js",
+    "static/js/2.0fb29e07.chunk.js.map": "/static/js/2.0fb29e07.chunk.js.map",
+    "static/js/3.a3d00a25.chunk.js": "/static/js/3.a3d00a25.chunk.js",
+    "static/js/3.a3d00a25.chunk.js.map": "/static/js/3.a3d00a25.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.7b928238.chunk.css.map": "/static/css/main.7b928238.chunk.css.map",
+    "static/js/2.0fb29e07.chunk.js.LICENSE.txt": "/static/js/2.0fb29e07.chunk.js.LICENSE.txt",
+    "static/media/DogLogo.18f8879d.png": "/static/media/DogLogo.18f8879d.png",
+    "static/media/landing.module.css": "/static/media/akita-americano2.494482b9.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.0151b433.js",
+    "static/js/2.0fb29e07.chunk.js",
+    "static/css/main.7b928238.chunk.css",
+    "static/js/main.abd292cf.chunk.js"
+  ]
+}
