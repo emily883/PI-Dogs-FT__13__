@@ -14,7 +14,7 @@ export default function footer() {
             <a
               href="https://github.com/emily883"
               target="_blank"
-              class="fa-github"
+              className="fa-github"
               rel="noreferrer"
             > <FaGithub /></a>
           </li>
@@ -22,7 +22,7 @@ export default function footer() {
             <a
               href="https://www.linkedin.com/in/emilycruz/"
               target="_blank"
-              class="fa-linkedin"
+              className="fa-linkedin"
               rel="noreferrer"
             > <FaLinkedin /></a>
           </li>
@@ -30,7 +30,7 @@ export default function footer() {
             <a
               href="https://www.instagram.com/mili_panda_880/"
               target="_blank"
-              class="fa-instagram"
+              className="fa-instagram"
               aria-hidden="true"
               rel="noreferrer"
             > <FaInstagram /></a>

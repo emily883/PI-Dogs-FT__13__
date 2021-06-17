@@ -6,13 +6,11 @@ const { v4: uuidv4 } = require('uuid');
 
 router.post("/" , async (req, res) =>{
     var {name, height, weight, life_span, nameT, image} = req.body;
-    // var id = uuidv4();
     if(!image){
         image = {url: 'https://i.pinimg.com/originals/e8/a9/ce/e8a9ce9ab3f3c5ef298a14514047647e.jpg'}
     }
     try {
         if(name){
-            // const NewDogBody = {...req.body, id, image};
             const NewDogBody = {
                 name,
                 height,

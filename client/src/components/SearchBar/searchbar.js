@@ -12,7 +12,6 @@ export default function SearchBar ({input, setinput}){
                     type="text"
                     value={input}
                     placeholder="Type to search!!"
-                    onChange
                     className={style.input}>
                     </input>
                     <div className={style.search}>

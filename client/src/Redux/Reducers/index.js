@@ -1,8 +1,9 @@
-import {show_dogs} from '../actions';
+import {show_dogs, get_temperaments} from '../actions';
 
 const InitialState = {
-    Dogs: [],
-    loading: false
+    Dogs: {},
+    details:{},
+    temperaments:[]
 }
 
 const todos = (state = InitialState, action) => {
@@ -10,7 +11,13 @@ const todos = (state = InitialState, action) => {
         case (show_dogs): {
             return {
                 ...state,
-                dogs: action.payload
+                Dogs: action.payload
+            }
+        }
+        case(get_temperaments): {
+            return {
+                ...state,
+                temperaments: action.payload
             }
         }
         default : return state

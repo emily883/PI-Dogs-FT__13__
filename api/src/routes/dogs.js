@@ -9,6 +9,7 @@ router.get("/", (req, res) => {
   var { name } = req.query;
   var page = parseInt(req.query.page);
   const DogDb = Dog.findAll();
+
   //TERMINAR ESTO 
   if (name) {
     axios
@@ -52,9 +53,10 @@ router.get("/:idRaza", async (req, res) => {
 });
 
 function paginated(model, page) {
-  const start = (page - 1) * limit;
-  const end = page * limit;
-  const result = {};
+  const start = (page - 1) * limit; // start = 1
+  const end = page * limit; 
+  const pages = Math.round(model.length / 8);
+  const result = {pages:pages};
 
   if (end < model.length) {
     let aja = page + 1;

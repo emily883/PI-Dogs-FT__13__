@@ -36,7 +36,7 @@ router.get("/", async (req, res) => {
     Temperament.findAll()
     .then((response) => res.json(response))
     .catch((err) => res.json({ error: "There was an error" }));
-  },2000)
+  },1000)
 });
 
 module.exports = router;
