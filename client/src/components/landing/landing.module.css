@@ -1,3 +1,38 @@
-.container{
-    background-image: url('./akita-americano2.jpg');
+.container {
+  background-image: url("./doggie.jpg");
+  height: 100vh;
+  background-position: left;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-left: 3rem;
+}
+
+.title {
+  font-family: inherit;
+  font-weight: 800;
+  font-size: 60px;
+}
+
+.text {
+  margin-bottom: 0.5rem;
+  margin-left: 1rem;
+}
+
+.button {
+  color: black;
+  background-color: rgb(79, 126, 165);
+  border-radius: 25px;
+  padding: 10px;
+  border: none;
+  font: inherit;
+  outline: none;
+  width: 100%;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: rgb(29 56 96);
+  transition: all 0.9s;
 }

@@ -5,12 +5,12 @@ import style from './landing.module.css';
 function Landing(){
     return (
         <div className={style.container}>
-            <div>
-                <h1>PI-Dogs</h1>
-                <h5>Come in and learn about your favorite dog</h5>
+            <div classname={style.msgContainer}>
+                <h1 className={style.title}>Welcome!!</h1>
+                <h5 className={style.text}>Come in and learn about your favorite dog</h5>
                 <div>
                     <NavLink to='/home'>
-                        <button>Enter</button>
+                        <button className={style.button}>Enter</button>
                     </NavLink>
                 </div>
             </div>

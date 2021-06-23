@@ -24,7 +24,7 @@ router.get("/", async (req, res) => {
       temp.forEach((t) => {
         Temperament.findOrCreate({
           where: {
-            nameT: t.temperament,
+            temperament: t.temperament,
           },
         });
       });

@@ -1,0 +1,50 @@
+.Container {
+  border: 2px solid rgb(29 56 96);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 20%;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.title {
+  margin-top: 0.5rem;
+}
+
+.option {
+  padding: 5px 80px;
+  margin: 5px;
+  outline: none;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 1px solid rgb(29 56 96);
+}
+
+.order {
+  padding: 5px 65px;
+  margin: 5px;
+  outline: none;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 1px solid rgb(29 56 96);
+}
+
+
+.ButtonSort{
+    color: white;
+    background-color: #333;
+    border: none;
+    padding: 10px 102px;
+    border-radius: 5px;
+    transition: background-color 200ms ease;
+    font-size: 15px;
+    margin: 15px 0px 20px;
+}
+
+.ButtonSort:hover{
+    font-weight: bold;
+    background-color: black;
+    cursor: pointer;
+}

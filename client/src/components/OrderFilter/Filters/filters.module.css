@@ -1,0 +1,40 @@
+.container {
+  border: 2px solid rgb(29 56 96);
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  width: 20%;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.title{
+    margin-top: 0.5rem;
+}
+
+.getTemperaments {
+  padding: 5px 10px;
+  margin: 5px 45px;
+  outline: none;
+  font-size: 15px;
+  border-radius: 10px;
+  border: 1px solid rgb(29 56 96);
+}
+
+.ButtonClear {
+  color: white;
+  background-color: #333;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 200ms ease;
+  font-size: 15px;
+  margin: 15px 45px 25px;
+}
+
+.ButtonClear:hover {
+  font-weight: bold;
+  background-color: black;
+  cursor: pointer;
+}
