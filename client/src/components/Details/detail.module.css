@@ -1,14 +1,63 @@
 .weight{
+    font-size:1.5rem;
     color:black;
+    font-weight:bold;
 }
 .height{
+    font-size:1.5rem;
     color:black;
+    font-weight:bold;
 }
 
 .life_span{
+    font-size:1.5rem;
     color:black;
+    font-weight:bold;
 }
 
 .temperament{
+    font-size:1.5rem;
     color:black;
+    font-weight:bold;
+}
+
+.Details{
+    display:flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.name {
+    background-color: rgb(29 56 96);
+    margin:25px 368px 25px;
+    padding: 5px 10px;
+    border-radius: 5rem;
+}
+
+.image{
+    width: 50%;
+    height: 40%;
+    border-radius: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 1px 1px 12px -1px rgba(0,0,0,0.24);
+    -webkit-box-shadow: 1px 1px 12px -1px rgba(0,0,0,0.24);
+    -moz-box-shadow: 1px 1px 12px -1px rgba(0,0,0,0.24);
+}
+
+.paw{
+    font-size: 1.5rem;
+    color: #1bac91;
+    margin: 5px;
+}
+
+.temperament{
+    display: inline-flex;
+    margin: 5px;
+    color: white;
+    background-color: #90a8bf;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 5px 15px;
+    align-items: center;
+    font-weight: 400;
 }

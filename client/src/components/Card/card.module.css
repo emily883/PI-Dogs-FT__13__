@@ -1,0 +1,43 @@
+.cardContainer {
+  background-color: rgba(61, 85, 107, 0.164);
+  width: 324px;
+  height: 255px;
+  margin-bottom: 5rem;
+  border-radius: 2rem;
+  box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
+  transition: transform 250ms ease;
+  overflow: hidden;
+}
+
+.cardContainer:hover {
+  transform: scale(1.02);
+  border: 1px solid rgb(29 56 96);
+  transition: border 0.3s;
+}
+
+.cardImg {
+  margin: 10px 81px 6px 81px;
+  width: 50%;
+  height: 150px;
+  border-radius: 2rem;
+  object-fit: cover;
+}
+
+.info {
+  display: flex;
+}
+
+.title {
+    color: black;
+    font-size: 22px;
+    text-align: center;
+    text-decoration: none;
+}
+
+
+.temperaments{
+    text-align: center;
+    color: black;
+    font-size: 19px;
+    text-decoration: none;
+}

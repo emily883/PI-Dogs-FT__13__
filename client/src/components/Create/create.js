@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { getTemperaments } from "../../Redux/actions";
 import Footer from "../footer/footer.js";
 import Navbar from "../Navbar/navbar.js";
+import style from "./create.module.css";
 
 function validateInput(input) {
   let errors = {};
@@ -79,18 +80,27 @@ function Create({ getTemperaments, temperaments }) {
 
   function handleSubmit(e) {
     e.preventDefault();
-    if (!error.name && !error.weight && !error.height && !error.life_span && input.temperament[0]) {
-      axios.post("http://localhost:3001/dog", input).then((res) => {
-        alert("Dog created successfully");
-        setInput({
-          name: "",
-          height: "",
-          weight: "",
-          life_span: "",
-          temperament: [],
-        });
-      }).catch(res => alert("I couldn't create the Dog"))
-    }else{
+    if (
+      !error.name &&
+      !error.weight &&
+      !error.height &&
+      !error.life_span &&
+      input.temperament[0]
+    ) {
+      axios
+        .post("http://localhost:3001/dog", input)
+        .then((res) => {
+          alert("Dog created successfully");
+          setInput({
+            name: "",
+            height: "",
+            weight: "",
+            life_span: "",
+            temperament: [],
+          });
+        })
+        .catch((res) => alert("I couldn't create the Dog"));
+    } else {
       alert("Please put the information");
     }
   }
@@ -98,67 +108,80 @@ function Create({ getTemperaments, temperaments }) {
   return (
     <div>
       <Navbar />
-      {input.image && <img src={input.image} alt="my doggie" />}
+      <div className={style.container}>
+        <p className={style.title}>Create Breed</p>
 
-      <form onSubmit={handleSubmit}>
-        <input
-          type="text"
-          name="name"
-          onChange={handleChange}
-          placeholder="Name"
-          required
-        />
-        {error.name && <p>{error.name}</p>}
-        <input
-          type="text"
-          onChange={handleChange}
-          name="height"
-          placeholder="Height"
-          required
-        />
-        {error.height && <p>{error.height}</p>}
-        <input
-          type="text"
-          onChange={handleChange}
-          name="weight"
-          placeholder="Weight"
-          required
-        />
-        {error.weight && <p>{error.weight}</p>}
-        <input
-          type="text"
-          onChange={handleChange}
-          name="life_span"
-          placeholder="Life Span"
-          required
-        />
-        {error.life_span && <p>{error.life_span}</p>}
+        <form onSubmit={handleSubmit}>
+          <input
+            className={style.name}
+            type="text"
+            name="name"
+            onChange={handleChange}
+            placeholder="Name"
+            required
+          />
 
-        <div>
-          <select name="temperaments" onChange={handleTemperament} required>
-            <option>Select a Temperament</option>
-            {temperaments &&
-              temperaments.map((m) => (
-                <option value={m.temperament} key={m.id}>
-                  {m.temperament}
-                </option>
+          {error.name && <p className={style.error}>{error.name}</p>}
+          <input
+            className={style.height}
+            type="text"
+            onChange={handleChange}
+            name="height"
+            placeholder="Height"
+            required
+          />
+
+          {error.height && <p className={style.error}>{error.height}</p>}
+          <input
+            className={style.weight}
+            type="text"
+            onChange={handleChange}
+            name="weight"
+            placeholder="Weight"
+            required
+          />
+
+          {error.weight && <p className={style.error}>{error.weight}</p>}
+          <input
+            className={style.life_span}
+            type="text"
+            onChange={handleChange}
+            name="life_span"
+            placeholder="Life Span"
+            required
+          />
+          {error.life_span && <p className={style.error}>{error.life_span}</p>}
+
+          <div>
+            <select
+              name="temperaments"
+              onChange={handleTemperament}
+              className={style.temperaments}
+              required
+            >
+              <option>Select a Temperament</option>
+              {temperaments &&
+                temperaments.map((m) => (
+                  <option value={m.temperament} key={m.id}>
+                    {m.temperament}
+                  </option>
+                ))}
+            </select>
+          </div>
+          <div className={style.temperamentsSelected}>
+            {input.temperament &&
+              input.temperament.map((m) => (
+                <div key={m}>
+                  <p className={style.p}>
+                    {m}
+                    <button onClick={() => deleteTemp(m)} className={style.delete}>X</button>
+                  </p>
+                </div>
               ))}
-          </select>
-        </div>
-        <div>
-          {input.temperament &&
-            input.temperament.map((m) => (
-              <div key={m}>
-                <p>
-                  {m}
-                  <button onClick={() => deleteTemp(m)}>X</button>
-                </p>
-              </div>
-            ))}
-        </div>
-        <button type="submit">Create Breed</button>
-      </form>
-      <Footer />
+          </div>
+          <button type="submit" className={style.buttonCreate}>Create Breed</button>
+        </form>
+      </div>
     </div>
   );
 }

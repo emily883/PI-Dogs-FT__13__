@@ -1,0 +1,47 @@
+.Dogs_container {
+  display: flex;
+  margin-left: 20vw;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.pagination {
+  display: flex;
+  justify-content: space-around;
+}
+
+.Back {
+  color: white;
+  background-color: #333;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 200ms ease;
+  font-size: 15px;
+  margin: 15px 45px 25px;
+  cursor: pointer;
+}
+
+.Back:hover {
+  font-weight: bold;
+  background-color: black;
+  cursor: pointer;
+}
+
+.Next {
+  color: white;
+  background-color: #333;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background-color 200ms ease;
+  font-size: 15px;
+  margin: 15px 45px 25px;
+  cursor: pointer;
+}
+
+.Next:hover {
+  font-weight: bold;
+  background-color: black;
+  cursor: pointer;
+}

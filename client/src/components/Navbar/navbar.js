@@ -14,9 +14,6 @@ export default function Navbar() {
           <Link to="/home" className={style.home}>
             Home
           </Link>
-          <Link to="/about" className={style.about}>
-            About
-          </Link>
           <Link to="/create" className={style.create}>
             Create breed
           </Link>

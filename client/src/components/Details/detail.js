@@ -3,7 +3,7 @@ import { connect } from "react-redux";
 import style from "./detail.module.css";
 import { getDetails } from "../../Redux/actions";
 import Navbar from "../Navbar/navbar";
-import Footer from "../footer/footer";
+// import Footer from "../footer/footer";
 import { FaDog } from "react-icons/fa";
 
 function Details({ id, Detail, getDetails }) {
@@ -19,31 +19,48 @@ function Details({ id, Detail, getDetails }) {
       <div className={style.Details}>
         {Detail.id == id ? (
           <div>
-            <h1>{name}</h1>
-            <img src={image.url} alt="Doggie" />
-            <FaDog />
+            <h1 className={style.name}>{name}</h1>
+            <img src={image.url} alt="Doggie" className={style.image} />
+            <br />
+            <div className={style.paw}>
+              <FaDog />
+            </div>
+            <br />
             <span className={style.weight}>
               Weight: {weight.imperial} Pounds
             </span>
-            <FaDog />
+            <br />
+            <br />
+            <div className={style.paw}>
+              <FaDog />
+            </div>
+            <br />
             <span className={style.height}>
               Height: {height.imperial} Inches
             </span>
-            <FaDog />
-            <span className={style.life_span}>
-              Life span: {life_span}
-            </span>
-            <FaDog />
-            {
-              temperaments.map(m => (
-                <span key={m} className={style.temperament}>{m}</span>
-              ))
-            }
+            <br />
+            <br />
+            <div className={style.paw}>
+              <FaDog />
+            </div>
+            <br />
+            <span className={style.life_span}>Life span: {life_span}</span>
+            <br />
+            <br />
+            <div className={style.paw}>
+              <FaDog />
+            </div>
+            <br />
+            {temperaments.map((m) => (
+              <span key={m} className={style.temperament}>
+                {m}
+              </span>
+            ))}
           </div>
-        ): ( <p>Loading...</p> )
-      }
+        ) : (
+          <p>Loading...</p>
+        )}
       </div>
-      <Footer />
     </>
   );
 }

@@ -1,0 +1,116 @@
+
+
+.container{
+    background-color: white;
+    border: 2px solid rgb(29 56 96);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    display:flex;
+    flex-direction: column;
+    width:50%;
+    margin:50px 25%;
+
+}
+
+.title{
+    display: flex;
+    justify-content: center;
+    font-size: 30px;
+    font-weight:bold;
+    margin-bottom: 30px;
+}
+
+.name{
+    display: flex;
+    border: 2px solid rgb(29 56 96);
+    border-radius: 5px;
+    width: 20%;
+    padding:5px;
+    margin:0px 0px 20px 39%;
+}
+.height{
+    display: flex;
+    border: 2px solid rgb(29 56 96);
+    border-radius: 5px;
+    width: 20%;
+    padding:5px;
+    margin:0px 0px 20px 39%;
+}
+.weight{
+    display: flex;
+    border: 2px solid rgb(29 56 96);
+    border-radius: 5px;
+    width: 20%;
+    padding:5px;
+    margin:0px 0px 20px 39%;
+}
+.life_span{
+    display: flex;
+    border: 2px solid rgb(29 56 96);
+    border-radius: 5px;
+    width: 20%;
+    padding:5px;
+    margin:0px 0px 20px 39%;
+}
+
+.error{
+    display: flex;
+    padding:0px;
+    margin:-13px 0px 10px 39%;
+}
+
+.temperaments{
+    padding:5px;
+    margin:-13px 0px 10px 39%;
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid rgb(29 56 96);
+}
+
+.temperamentsSelected{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content:center;
+}
+.p{
+    margin: 5px;
+    background-color: rgb(29 56 96);
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 15px;
+    display:flex;
+    justify-content:space-around;
+}
+
+.delete{
+    display:flex;
+    align-items:center;
+    margin-left: 5px;
+    background: transparent;
+    border: none;
+    transition: color 0.3s ease;
+    font-weight: bold;
+}
+.delete:hover{
+    cursor: pointer;
+    color:red;
+}
+
+.buttonCreate {
+    color: white;
+    background-color: #333;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    transition: background-color 200ms ease;
+    font-size: 15px;
+    margin:13px 0px 10px 43%;
+  }
+  
+  .buttonCreate:hover {
+    font-weight: bold;
+    background-color: black;
+    cursor: pointer;
+  }
+  

@@ -3,10 +3,11 @@
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  margin: auto;
   width: 20%;
   text-align: center;
-  margin-top: 2rem;
+  margin-top: 1rem;
+  position: absolute;
+  top:19rem;
 }
 
 .title {
@@ -14,7 +15,7 @@
 }
 
 .option {
-  padding: 5px 80px;
+  padding: 5px 25%;
   margin: 5px;
   outline: none;
   font-size: 15px;

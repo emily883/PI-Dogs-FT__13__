@@ -3,10 +3,10 @@
   border-radius: 5px;
   display: flex;
   flex-direction: column;
-  margin: auto;
   width: 20%;
   text-align: center;
   margin-top: 2rem;
+  position:absolute;
 }
 
 .title{
@@ -37,4 +37,35 @@
   font-weight: bold;
   background-color: black;
   cursor: pointer;
+}
+
+.temperamentsSelected{
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.p{
+    margin: 5px;
+    background-color: rgb(29 56 96);
+    color: white;
+    padding: 5px;
+    border-radius: 10px;
+    font-size: 15px;
+    width: 30%;
+    display:flex;
+    justify-content: center;
+}
+
+.delete{
+    display:flex;
+    align-items:center;
+    margin-left: 5px;
+    background: transparent;
+    border: none;
+    transition: color 0.3s ease;
+    font-weight: bold;
+}
+.delete:hover{
+    cursor: pointer;
+    color:red;
 }

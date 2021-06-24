@@ -5,7 +5,6 @@ import { getDogs, PageSelection, searchIt } from "../../Redux/actions";
 import style from "./dogs.module.css";
 import Search from "../SearchBar/searchbar.js";
 import paginated from "../../functions/paginated.js";
-import searchDogs from "../../functions/search.js";
 import Filters from "../OrderFilter/Filters/filters.js";
 import Order from "../OrderFilter/Order/order.js";
 // const image =
@@ -18,9 +17,7 @@ function Dogs(props) {
     if (!props.searching) {
       props.getDogs();
     }
-    // if(props.searching){
-    //   props.searchIt(input,props.page)
-    // }
+
   }, [props.page]);
 
   function changePage(option) {
@@ -63,15 +60,15 @@ function Dogs(props) {
       </div>
       <div className={style.pagination}>
         {props.page === 1 ? (
-          <button disabled={true}>BACK</button>
+          <button disabled={true}></button>
         ) : (
-          <button onClick={() => changePage("BACK")}>BACK</button>
+          <button onClick={() => changePage("BACK") } className={style.Back}>BACK</button>
         )}
 
         {Dogs.length < 8 ? (
-          <button disabled={true}>NEXT</button>
+          <button disabled={true}></button>
         ) : (
-          <button onClick={() => changePage("NEXT")}>NEXT</button>
+          <button onClick={() => changePage("NEXT")} className={style.Next}>NEXT</button>
         )}
       </div>
     </>

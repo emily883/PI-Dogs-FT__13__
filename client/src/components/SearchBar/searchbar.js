@@ -17,9 +17,6 @@ function SearchBar({ searchIt, getDogs, input, setInput, PageReset, Dogs,filteri
         PageReset();
         searchIt(searchDogs(Dogs, e.target.value));
       } else {
-        if(filtering){
-
-        }
         getDogs();
       }
     }

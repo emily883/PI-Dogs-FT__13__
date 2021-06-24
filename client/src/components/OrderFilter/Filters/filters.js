@@ -4,7 +4,7 @@ import filterTemperaments from "../../../functions/filter";
 import { getTemperaments, FilterBy, getDogs } from "../../../Redux/actions";
 import style from './filters.module.css';
 
-function Filters({ temperaments, getTemperaments, Dogs, FilterBy }) {
+function Filters({ temperaments, getTemperaments, Dogs, FilterBy,getDogs }) {
   const [tempe, setTempe] = useState([]);
 
   useEffect(() => {
@@ -27,6 +27,8 @@ function Filters({ temperaments, getTemperaments, Dogs, FilterBy }) {
 
   function deleteTemp(name) {
     setTempe(tempe.filter((m) => m !== name));
+    getDogs();
+    FilterBy(filterTemperaments(Dogs, tempe));
   }
 
   useEffect(() => {
@@ -50,10 +52,10 @@ function Filters({ temperaments, getTemperaments, Dogs, FilterBy }) {
         </select>
         {tempe &&
           tempe.map((m) => (
-            <div key={m}>
-              <p>
+            <div key={m} className={style.temperamentsSelected}>
+              <p className={style.p}>
                 {m}
-                <button onClick={() => deleteTemp(m)}>X</button>
+                <button onClick={() => deleteTemp(m) } className={style.delete}>X</button>
               </p>
             </div>
           ))}
