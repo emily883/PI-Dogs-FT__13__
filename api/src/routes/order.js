@@ -5,6 +5,8 @@ const axios = require("axios");
 const map = require("./mapFunction");
 const { Dog, Temperament } = require("../db.js");
 
+// Depending on the property and how you want to order it, this endpoint takes care of it
+
 router.post("/", async (req, res) => {
   const DogDb = Dog.findAll({ include: Temperament });
   var DbApi = axios.get(`https://api.thedogapi.com/v1/breeds/?api_key=${key}`);

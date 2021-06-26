@@ -4,6 +4,8 @@ const { Temperament } = require("../db.js");
 const axios = require("axios").default;
 const { key } = process.env;
 
+// Grab all the temperaments from the api and return a new json with all the temperaments with their respective id's
+
 router.get("/", async (req, res) => {
   var temp = [];
 
@@ -11,8 +13,7 @@ router.get("/", async (req, res) => {
     .get(`https://api.thedogapi.com/v1/breeds/?api_key=${key}`)
     .then((response) => {
       response.data.forEach((c) => {
-        var tempos = c.temperament?.split(", "); // Algunos devuelven undefined el ? es para evitar que se haga el split a un undefined y tire error :)
-        // console.log(tempos);
+        var tempos = c.temperament?.split(", "); 
         tempos?.forEach((t) => {
           if (!temp.find((m) => m.name === t)) {
             temp.push({ temperament: t });
@@ -30,7 +31,7 @@ router.get("/", async (req, res) => {
       });
     })
     .catch((err) => res.status(401));
-  // El código de error HTTP 401 indica que la petición (request) no ha sido ejecutada porque carece de credenciales válidas de autenticación para el recurso solicitado.
+  
 
   setTimeout(function searchAll(){
     Temperament.findAll()

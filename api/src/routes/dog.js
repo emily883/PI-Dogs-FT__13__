@@ -2,6 +2,8 @@ const { Router } = require("express");
 const router = Router();
 const { Dog, Temperament } = require("../db.js");
 
+// Create a new breed Dog
+
 router.post("/", async (req, res) => {
   var { name, height, weight, life_span, temperament } = req.body;
 
@@ -30,8 +32,7 @@ router.post("/", async (req, res) => {
       });
     }
   } catch (error) {
-    res.status(422); // 422 entidad input no procesable :)
-    // Unprocessable Entity
+    res.status(422);
   }
 });
 
