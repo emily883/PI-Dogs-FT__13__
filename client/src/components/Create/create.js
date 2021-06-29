@@ -2,7 +2,6 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { getTemperaments } from "../../Redux/actions";
-import Footer from "../footer/footer.js";
 import Navbar from "../Navbar/navbar.js";
 import style from "./create.module.css";
 

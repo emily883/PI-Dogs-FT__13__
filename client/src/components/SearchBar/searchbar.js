@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import style from "./searchbar.module.css";
-import { searchIt, getDogs, PageReset } from "../../Redux/actions";
+import { searchIt, getDogs, PageReset,searchItClear } from "../../Redux/actions";
 import { connect } from "react-redux";
 import searchDogs from "../../functions/search";
 
-function SearchBar({ searchIt, getDogs, input, setInput, PageReset, Dogs,filtering }) {
+function SearchBar({ searchIt, getDogs, input, setInput, PageReset, Dogs,searchItClear }) {
   const [error, setError] = useState("");
 
   function handleChange(e) {
@@ -17,7 +17,7 @@ function SearchBar({ searchIt, getDogs, input, setInput, PageReset, Dogs,filteri
         PageReset();
         searchIt(searchDogs(Dogs, e.target.value));
       } else {
-        getDogs();
+        searchItClear();
       }
     }
   }
@@ -44,7 +44,7 @@ function mapStateToProps(state) {
   return {
     Dogs: state.Dogs,
     page: state.page,
-    filtering: state.filtering
+    searched: state.searched
   };
 }
 
@@ -53,6 +53,7 @@ function mapDipatchToProps(dispatch) {
     searchIt: (input) => dispatch(searchIt(input)),
     getDogs: (page) => dispatch(getDogs(page)),
     PageReset: () => dispatch(PageReset()),
+    searchItClear: () => dispatch(searchItClear())
   };
 }
 

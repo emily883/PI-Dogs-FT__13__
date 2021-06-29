@@ -1,17 +1,19 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import filterTemperaments from "../../../functions/filter";
-import { getTemperaments, FilterBy, getDogs } from "../../../Redux/actions";
-import style from './filters.module.css';
+import { getTemperaments, FilterBy, getDogs,noFilter } from "../../../Redux/actions";
+import style from "./filters.module.css";
 
-function Filters({ temperaments, getTemperaments, Dogs, FilterBy,getDogs }) {
+function Filters({ temperaments, getTemperaments, Dogs, FilterBy,noFilter }) {
   const [tempe, setTempe] = useState([]);
 
   useEffect(() => {
     if (tempe[0]) {
-      return FilterBy(filterTemperaments(Dogs, tempe));
+      FilterBy({
+        temperaments: tempe,
+        dogs: Dogs,
+      });
     } else {
-      getDogs();
+      noFilter()
     }
   }, [tempe]);
 
@@ -27,8 +29,6 @@ function Filters({ temperaments, getTemperaments, Dogs, FilterBy,getDogs }) {
 
   function deleteTemp(name) {
     setTempe(tempe.filter((m) => m !== name));
-    getDogs();
-    FilterBy(filterTemperaments(Dogs, tempe));
   }
 
   useEffect(() => {
@@ -39,7 +39,11 @@ function Filters({ temperaments, getTemperaments, Dogs, FilterBy,getDogs }) {
     <>
       <div className={style.container}>
         <h1 className={style.title}>Filter By</h1>
-        <select name="temperaments" onChange={handleTemperament} className={style.getTemperaments}>
+        <select
+          name="temperaments"
+          onChange={handleTemperament}
+          className={style.getTemperaments}
+        >
           <option value="" selected={true}>
             Select temperaments
           </option>
@@ -55,12 +59,16 @@ function Filters({ temperaments, getTemperaments, Dogs, FilterBy,getDogs }) {
             <div key={m} className={style.temperamentsSelected}>
               <p className={style.p}>
                 {m}
-                <button onClick={() => deleteTemp(m) } className={style.delete}>X</button>
+                <button onClick={() => deleteTemp(m)} className={style.delete}>
+                  X
+                </button>
               </p>
             </div>
           ))}
-  
-        <button onClick={() => setTempe([])} className={style.ButtonClear}>Clear filter</button>
+
+        <button onClick={() => setTempe([])} className={style.ButtonClear}>
+          Clear filter
+        </button>
       </div>
     </>
   );
@@ -76,8 +84,9 @@ function mapStateToProps(state) {
 function mapDipatchToProps(dispatch) {
   return {
     getTemperaments: () => dispatch(getTemperaments()),
-    FilterBy: (dogsFiltered) => dispatch(FilterBy(dogsFiltered)),
+    FilterBy: (info) => dispatch(FilterBy(info)),
     getDogs: () => dispatch(getDogs()),
+    noFilter: () => dispatch(noFilter())
   };
 }
 

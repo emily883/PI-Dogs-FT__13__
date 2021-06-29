@@ -1,13 +1,28 @@
+.mainContainer{
+  display:flex;
+  margin:0px;
+  padding:0px;
+}
+
+.filterContainer{
+  /* display:flex; */
+  /* flex-direction: column; */
+}
+
+.search{
+  /* display:flex;
+  justify-content:center; */
+}
+
 .Dogs_container {
-  display: flex;
-  margin-left: 20vw;
+  /* display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-around; */
 }
 
 .pagination {
-  display: flex;
-  justify-content: space-around;
+  /* display: flex;
+  justify-content: space-around; */
 }
 
 .Back {

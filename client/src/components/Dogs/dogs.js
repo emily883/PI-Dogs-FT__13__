@@ -17,7 +17,6 @@ function Dogs(props) {
     if (!props.searching) {
       props.getDogs();
     }
-
   }, [props.page]);
 
   function changePage(option) {
@@ -30,13 +29,25 @@ function Dogs(props) {
   }
 
   var Dogs = [...props.Dogs];
+  if (props.searched[0]) {
+    Dogs = props.searched;
+  } else {
+    Dogs = [...props.Dogs];
+  }
+  if (props.filter[0]) {
+    Dogs = props.filter;
+  }
   Dogs = paginated(Dogs, props.page);
   return (
     <>
-      <div>
-        <Filters input={input} />
-        <Order />
-        <Search input={input} setInput={setInput} />
+      <div className={style.mainContainer}>
+        <div className={style.filterContainer}>
+          <Filters input={input} />
+          <Order />
+        </div>
+        <div className={style.search}>
+          <Search input={input} setInput={setInput} />
+        </div>
       </div>
       <div className={style.Dogs_container}>
         {Dogs[0] ? (
@@ -62,13 +73,17 @@ function Dogs(props) {
         {props.page === 1 ? (
           <button disabled={true}></button>
         ) : (
-          <button onClick={() => changePage("BACK") } className={style.Back}>BACK</button>
+          <button onClick={() => changePage("BACK")} className={style.Back}>
+            BACK
+          </button>
         )}
 
-        {Dogs.length < 8 ? (
+        {Dogs.length < 7 ? (
           <button disabled={true}></button>
         ) : (
-          <button onClick={() => changePage("NEXT")} className={style.Next}>NEXT</button>
+          <button onClick={() => changePage("NEXT")} className={style.Next}>
+            NEXT
+          </button>
         )}
       </div>
     </>
@@ -80,7 +95,8 @@ function mapStateToProps(state) {
     Dogs: state.Dogs,
     page: state.page,
     searching: state.searching,
-    filteredDogs: state.filteredDogs,
+    filter: state.filter,
+    searched: state.searched,
   };
 }
 

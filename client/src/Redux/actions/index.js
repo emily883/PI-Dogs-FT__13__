@@ -8,6 +8,8 @@ export const pageReset = "PAGE_RESET";
 export const filter = "FILTER_BY_TEMPERAMENT";
 export const order = "ORDER_BY";
 export const filterByTemperament = "FILTER_BY_TEMPERAMENT";
+export const noFiltering = "NO_FILTERING";
+export const searchClear = "CLEARSEARCHIT";
 
 export function getDogs() {
   return function (dispatch) {
@@ -15,7 +17,7 @@ export function getDogs() {
       .get("http://localhost:3001/dogs/")
       .then((response) => response.data)
       .then((json) => {
-        dispatch({ type: show_dogs, payload: json});
+        dispatch({ type: show_dogs, payload: json });
       });
   };
 }
@@ -44,8 +46,14 @@ export function getTemperaments() {
 
 export function searchIt(json) {
   return function (dispatch) {
-    dispatch({ type: search, dogs: json});
+    dispatch({ type: search, dogs: json });
   };
+}
+
+export function searchItClear(){
+  return function (dispatch){
+    dispatch({type:searchClear})
+  }
 }
 
 export function PageSelection(number, option) {
@@ -71,8 +79,19 @@ export function orderBy(info) {
   };
 }
 
-export function FilterBy(tempe) {
+export function FilterBy(data) {
   return function (dispatch) {
-    dispatch({ type: filterByTemperament, payload: tempe });
+    axios
+      .post("http://localhost:3001/filter", data)
+      .then((response) => response.data)
+      .then((json) => {
+        dispatch({ type: filterByTemperament, payload: json });
+      });
   };
+}
+
+export function noFilter(){
+  return function(dispatch){
+    dispatch({type: noFiltering})
+  }
 }

@@ -7,6 +7,8 @@ import {
   pageReset,
   order,
   filterByTemperament,
+  noFiltering,
+  searchClear
 } from "../actions";
 
 const InitialState = {
@@ -14,7 +16,8 @@ const InitialState = {
   details: {},
   temperaments: [],
   page: 1,
-  filtering: false,
+  filter: [],
+  searched: []
 };
 
 const todos = (state = InitialState, action) => {
@@ -23,7 +26,6 @@ const todos = (state = InitialState, action) => {
       return {
         ...state,
         Dogs: action.payload,
-        searching: false,
       };
     }
     case get_temperaments: {
@@ -43,9 +45,14 @@ const todos = (state = InitialState, action) => {
     case search: {
       return {
         ...state,
-        Dogs: action.dogs,
-        searching: true,
+        searched: action.dogs,
       };
+    }
+    case searchClear: {
+      return {
+        ...state,
+        searched: []
+      }
     }
     case page: {
       if (action.page === "NEXT") {
@@ -71,14 +78,20 @@ const todos = (state = InitialState, action) => {
     case order: {
       return {
         ...state,
-        Dogs: action.payload,
+        filter: action.payload,
       };
     }
     case filterByTemperament: {
       return {
         ...state,
-        Dogs: action.payload,
+        filter: action.payload,
       };
+    }
+    case noFiltering: {
+      return {
+        ...state,
+        filter: []
+      }
     }
 
     default:

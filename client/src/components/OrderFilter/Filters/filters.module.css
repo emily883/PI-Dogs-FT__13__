@@ -1,12 +1,12 @@
 .container {
   border: 2px solid rgb(29 56 96);
   border-radius: 5px;
-  display: flex;
-  flex-direction: column;
-  width: 20%;
   text-align: center;
   margin-top: 2rem;
-  position:absolute;
+  /* display: flex;
+  flex-direction: column;
+  width: 20%;
+  position:relative; */
 }
 
 .title{
@@ -39,11 +39,7 @@
   cursor: pointer;
 }
 
-.temperamentsSelected{
-    display:flex;
-    justify-content: center;
-    flex-wrap: wrap;
-}
+
 .p{
     margin: 5px;
     background-color: rgb(29 56 96);
@@ -68,4 +64,10 @@
 .delete:hover{
     cursor: pointer;
     color:red;
+}
+
+.temperamentsSelected{
+  display:flex;
+  justify-content: center;
+  flex-wrap: wrap;
 }

@@ -1,16 +1,29 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
 import { orderBy } from "../../../Redux/actions";
-import style from './order.module.css';
+import style from "./order.module.css";
 
-function Order({Dogs, orderBy }) {
-  useEffect(() => {}, []);
-
+function Order({ Dogs, orderBy, filter }) {
   const [info, setInfo] = useState({
     info: Dogs,
     order: "AS",
     property: "name",
   });
+
+  useEffect(() => {
+    if (filter[0] && !filter[0].error) {
+      setInfo({
+        ...info,
+        info: filter,
+      });
+    }
+    if (!filter[0]) {
+      setInfo({
+        ...info,
+        info:Dogs
+      })
+    }
+  }, [filter]);
 
   function handleSubmit(e) {
     e.preventDefault();
@@ -49,17 +62,27 @@ function Order({Dogs, orderBy }) {
     <div className={style.Container}>
       <h2 className={style.title}>Sort By</h2>
       <form onSubmit={handleSubmit}>
-        <select defaultValue="name" onChange={handleChangeValue} className={style.option}>
+        <select
+          defaultValue="name"
+          onChange={handleChangeValue}
+          className={style.option}
+        >
           <option value="name">Name</option>
           <option value="weight">Weight</option>
         </select>
-        <br/>
-        <select defaultValue="AS" onChange={handleChangeOrder} className={style.order}>
+        <br />
+        <select
+          defaultValue="AS"
+          onChange={handleChangeOrder}
+          className={style.order}
+        >
           <option value="AS">Ascending</option>
           <option value="DS">Descending</option>
         </select>
-        <br/>
-        <button type="submit" className={style.ButtonSort}>Sort</button>
+        <br />
+        <button type="submit" className={style.ButtonSort}>
+          Sort
+        </button>
       </form>
     </div>
   );
@@ -67,7 +90,8 @@ function Order({Dogs, orderBy }) {
 
 function mapStateToProps(state) {
   return {
-    Dogs: state.DogsNoPaginated,
+    Dogs: state.Dogs,
+    filter: state.filter,
   };
 }
 
