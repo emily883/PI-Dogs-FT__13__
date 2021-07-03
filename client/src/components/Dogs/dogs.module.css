@@ -1,28 +1,26 @@
 .mainContainer{
-  display:flex;
+  /* display:flex;
+  flex-direction:row; */
   margin:0px;
   padding:0px;
 }
 
-.filterContainer{
-  /* display:flex; */
-  /* flex-direction: column; */
-}
 
 .search{
-  /* display:flex;
-  justify-content:center; */
+  display:flex;
+  margin-top: 10px;
+  margin-left: 25rem;
 }
 
 .Dogs_container {
-  /* display: flex;
+  display: flex;
   flex-wrap: wrap;
-  justify-content: space-around; */
+  justify-content: space-around;
 }
 
 .pagination {
-  /* display: flex;
-  justify-content: space-around; */
+  display: flex;
+  justify-content: space-around;
 }
 
 .Back {
@@ -59,4 +57,10 @@
   font-weight: bold;
   background-color: black;
   cursor: pointer;
+}
+
+
+.loading{
+  display:block;
+
 }

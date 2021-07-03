@@ -5,13 +5,12 @@ import { getDogs, PageSelection, searchIt } from "../../Redux/actions";
 import style from "./dogs.module.css";
 import Search from "../SearchBar/searchbar.js";
 import paginated from "../../functions/paginated.js";
-import Filters from "../OrderFilter/Filters/filters.js";
-import Order from "../OrderFilter/Order/order.js";
+
 // const image =
 //   "https://static.wixstatic.com/media/760dfc_84266ca3cce4402290a46a7145e1de57~mv2.jpg/v1/fill/w_340,h_220,al_c,q_80,usm_0.66_1.00_0.01/Pets%20Picture%20Not%20Available.webp";
 
 function Dogs(props) {
-  const [input, setInput] = useState("");
+  
 
   useEffect(() => {
     if (!props.searching) {
@@ -41,12 +40,9 @@ function Dogs(props) {
   return (
     <>
       <div className={style.mainContainer}>
-        <div className={style.filterContainer}>
-          <Filters input={input} />
-          <Order />
-        </div>
+
         <div className={style.search}>
-          <Search input={input} setInput={setInput} />
+          <Search input={props.input} setInput={props.setInput} />
         </div>
       </div>
       <div className={style.Dogs_container}>
@@ -61,17 +57,16 @@ function Dogs(props) {
                 id={m.id}
                 name={m.name}
                 img={m.image.url}
-                temperament={m.temperament}
               />
             );
           })
         ) : (
-          <h1>Loading.....</h1>
+          <h1 className={style.loading}><img src="https://media.giphy.com/media/3oEjI6SIIHBdRxXI40/giphy.gif" alt="Loading..."/></h1>
         )}
       </div>
       <div className={style.pagination}>
         {props.page === 1 ? (
-          <button disabled={true}></button>
+          <div> </div>
         ) : (
           <button onClick={() => changePage("BACK")} className={style.Back}>
             BACK
@@ -79,7 +74,7 @@ function Dogs(props) {
         )}
 
         {Dogs.length < 7 ? (
-          <button disabled={true}></button>
+          <div> </div>
         ) : (
           <button onClick={() => changePage("NEXT")} className={style.Next}>
             NEXT

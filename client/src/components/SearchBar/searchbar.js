@@ -4,7 +4,7 @@ import { searchIt, getDogs, PageReset,searchItClear } from "../../Redux/actions"
 import { connect } from "react-redux";
 import searchDogs from "../../functions/search";
 
-function SearchBar({ searchIt, getDogs, input, setInput, PageReset, Dogs,searchItClear }) {
+function SearchBar({ searchIt, setInput, PageReset, Dogs,searchItClear }) {
   const [error, setError] = useState("");
 
   function handleChange(e) {

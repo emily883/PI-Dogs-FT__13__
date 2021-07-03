@@ -3,10 +3,9 @@
   border-radius: 5px;
   text-align: center;
   margin-top: 2rem;
-  /* display: flex;
+  display: flex;
   flex-direction: column;
-  width: 20%;
-  position:relative; */
+  /* position:relative; */
 }
 
 .title{

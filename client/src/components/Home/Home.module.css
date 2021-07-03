@@ -1,3 +1,19 @@
-.homeContainer{
-    background-color: white
+.homeContainer {
+  background-color: white;
+  position: relative;
+}
+
+.filterContainer {
+  display: flex;
+  flex-direction: column;
+  width: 20%;
+}
+
+.Dogs {
+  position: absolute;
+  top: 100px;
+  display: flex;
+  flex-direction: column;
+  left: 22rem;
+  right: 1rem;
 }
