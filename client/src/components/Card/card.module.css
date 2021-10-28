@@ -3,6 +3,8 @@
   width: 300px;
   height: 255px;
   margin-bottom: 5rem;
+  margin-left: 0.3rem;
+  margin-right:0.1rem;
   border-radius: 2rem;
   box-shadow: 5px 5px 20px rgba(0, 0, 0, 0.5);
   transition: transform 250ms ease;
