@@ -2,9 +2,9 @@ import './App.css';
 import {Route} from 'react-router-dom';
 import Home from './components/Home/Home'
 import Landing from './components/landing/landing.js';
-
 import Create from './components/Create/create';
-import Details from './components/Details/detail.js'
+import Details from './components/Details/detail.js';
+import React from 'react';
 
 function App() {
   return (

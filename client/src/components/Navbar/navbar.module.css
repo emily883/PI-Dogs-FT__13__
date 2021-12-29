@@ -2,31 +2,31 @@
   border-bottom: 2px solid;
   border-color: rgb(29 56 96);
   background-color: white;
+  width: auto;
 }
-
 .navContainer {
   display: flex;
 }
-
 .logo {
   border-radius: 1rem;
-  margin: 5px;
-  width:4vw;
+  width: auto;
+  height: 7vh;
+  margin:10px;
+}
+@keyframes logoAnimated {
+  50% {
+    transform: rotate(360deg);
+  }
 }
 
-@keyframes logoAnimated{
-    50% {transform: rotate(360deg);}
-}
-
-.logo:hover{
-    animation: logoAnimated 3s;
+.logo:hover {
+  animation: logoAnimated 3s;
 }
 
 .linkContainer {
   padding: 20px;
   margin: 10px;
 }
-
 .home,
 .about,
 .create {
@@ -42,9 +42,9 @@
 
 .home:hover,
 .about:hover,
-.create:hover{
-    background-color:rgb(29 56 96);
-    transition: background-color linear 0.9s;
-    color:white;
-    transition: color 1.0s;
+.create:hover {
+  background-color: rgb(29 56 96);
+  transition: background-color linear 0.9s;
+  color: white;
+  transition: color 1s;
 }

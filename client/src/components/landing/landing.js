@@ -1,21 +1,35 @@
-import React from 'react';
-import { NavLink } from 'react-router-dom';
-import style from './landing.module.css';
+import React from "react";
+import { NavLink } from "react-router-dom";
+import style from "./landing.module.css";
 
-function Landing(){
-    return (
-        <div className={style.container}>
-            <div classname={style.msgContainer}>
-                <h1 className={style.title}>Welcome!!</h1>
-                <h5 className={style.text}>Come in and learn about your favorite dog</h5>
-                <div>
-                    <NavLink to='/home'>
-                        <button className={style.button}>Enter</button>
-                    </NavLink>
-                </div>
-            </div>
+function Landing() {
+  return (
+    <div className={style.landing}>
+      <div className={style.circle}></div>
+      <div className={style.container}>
+        <div className={style.msgContainer}>
+          <div className={style.title}>
+            <h1 className={style.welcome}>
+              Welcome to
+              <br />
+              <span className={style.span}>house of paws!</span>
+            </h1>
+          </div>
+          <h5 className={style.text}>
+            Come in and learn about your favorite dog
+          </h5>
+          <div>
+            <NavLink to="/home">
+              <button className={style.button}>
+                <span>Enter</span>
+              </button>
+            </NavLink>
+          </div>
         </div>
-    )
+      <div className={style.circle2}></div>
+      </div>
+    </div>
+  );
 }
 
-export default Landing
+export default Landing;

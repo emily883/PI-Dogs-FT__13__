@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from "react";
 import { connect } from "react-redux";
-import { getTemperaments, FilterBy, getDogs,noFilter } from "../../../Redux/actions";
+import {
+  getTemperaments,
+  FilterBy,
+  getDogs,
+  noFilter,
+} from "../../../Redux/actions";
 import style from "./filters.module.css";
 
-function Filters({ temperaments, getTemperaments, Dogs, FilterBy,noFilter }) {
+function Filters({ temperaments, getTemperaments, Dogs, FilterBy, noFilter }) {
   const [tempe, setTempe] = useState([]);
 
   useEffect(() => {
@@ -13,7 +18,7 @@ function Filters({ temperaments, getTemperaments, Dogs, FilterBy,noFilter }) {
         dogs: Dogs,
       });
     } else {
-      noFilter()
+      noFilter();
     }
   }, [tempe]);
 
@@ -54,18 +59,22 @@ function Filters({ temperaments, getTemperaments, Dogs, FilterBy,noFilter }) {
               </option>
             ))}
         </select>
-        {tempe &&
-          tempe.map((m) => (
-            <div key={m} className={style.temperamentsSelected}>
-              <p className={style.p}>
-                {m}
-                <button onClick={() => deleteTemp(m)} className={style.delete}>
-                  X
-                </button>
-              </p>
-            </div>
-          ))}
-
+        <div className={style.selectedTempe}>
+          {tempe &&
+            tempe.map((m) => (
+              <div key={m} className={style.temperamentsSelected}>
+                <p className={style.p}>
+                  {m}
+                  <button
+                    onClick={() => deleteTemp(m)}
+                    className={style.delete}
+                  >
+                    X
+                  </button>
+                </p>
+              </div>
+            ))}
+        </div>
         <button onClick={() => setTempe([])} className={style.ButtonClear}>
           Clear filter
         </button>
@@ -86,7 +95,7 @@ function mapDipatchToProps(dispatch) {
     getTemperaments: () => dispatch(getTemperaments()),
     FilterBy: (info) => dispatch(FilterBy(info)),
     getDogs: () => dispatch(getDogs()),
-    noFilter: () => dispatch(noFilter())
+    noFilter: () => dispatch(noFilter()),
   };
 }
 

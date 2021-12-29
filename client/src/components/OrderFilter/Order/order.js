@@ -61,7 +61,7 @@ function Order({ Dogs, orderBy, filter }) {
   return (
     <div className={style.Container}>
       <h2 className={style.title}>Sort By</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className={style.form}>
         <select
           defaultValue="name"
           onChange={handleChangeValue}
@@ -70,7 +70,6 @@ function Order({ Dogs, orderBy, filter }) {
           <option value="name">Name</option>
           <option value="weight">Weight</option>
         </select>
-        <br />
         <select
           defaultValue="AS"
           onChange={handleChangeOrder}
@@ -79,7 +78,6 @@ function Order({ Dogs, orderBy, filter }) {
           <option value="AS">Ascending</option>
           <option value="DS">Descending</option>
         </select>
-        <br />
         <button type="submit" className={style.ButtonSort}>
           Sort
         </button>
