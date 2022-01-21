@@ -1,15 +1,32 @@
-/* .error{
-    color:black;
-}
 
 
 .fromContainer{
-    display:block;
-    position:relative;
-    right:3vw;
-    bottom:1vw;
+    text-align: center;
+	padding-top: 25px;
+	padding-bottom: 25px;
+    
 }
 
+
+.btn {
+    padding: 5px;
+	border-radius: 0 2px 2px 0;
+	border: 1px solid #434141;
+	border-left: none;
+	background-color: var(--color-gainsboro);
+	font-size: medium;
+}
+
+.btn:hover {
+    cursor: pointer;
+	border-left: none;
+	background-color: var(--color-Gunmetal);
+	font-size: medium;
+	color: #eee;
+}
+
+
+/*
 .input{
     display: flex;
     border: 2px solid rgb(29 56 96);
@@ -20,3 +37,10 @@
 .input::placeholder{
     text-align: center;
 } */
+
+
+/* .error{
+    color:black;
+} */
+
+

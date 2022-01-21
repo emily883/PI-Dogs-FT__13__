@@ -1,18 +1,69 @@
-.mainContainer {
-  border-bottom: 2px solid;
-  border-color: rgb(29 56 96);
-  background-color: white;
-  width: auto;
-}
-.navContainer {
+.nav {
+  background: var(--color-Gunmetal);
+  border: 1px solid var(--color-DavysGray);
+  height: 60px;
   display: flex;
+  justify-content: space-between;
+  padding: 0.5rem calc((100vw - 1215px) / 2);
+  z-index: 10;
 }
+
+.h4{
+  display: inline-block;
+  
+  color: white;
+}
+
 .logo {
   border-radius: 1rem;
   width: auto;
   height: 7vh;
   margin:10px;
 }
+
+@keyframes logoAnimated {
+  50% {
+    transform: rotate(360deg);
+  }
+}
+
+.logo:hover {
+  animation: logoAnimated 3s;
+}
+
+/*
+----------------------------------------------------------------------------
+
+
+/*
+.mainContainer {
+  border-bottom: 2px solid;
+  border-color: rgb(29 56 96);
+  background-color: white;
+  width: auto;
+}
+
+
+.navContainer {
+  display: flex;
+}
+
+
+.logo {
+  position: absolute;
+  height: 100%;
+  padding: 16px 0;
+}
+
+.logo {
+  border-radius: 1rem;
+  width: auto;
+  height: 7vh;
+  margin:10px;
+}
+
+
+
 @keyframes logoAnimated {
   50% {
     transform: rotate(360deg);
@@ -48,3 +99,4 @@
   color: white;
   transition: color 1s;
 }
+*/

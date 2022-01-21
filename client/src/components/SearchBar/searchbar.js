@@ -1,10 +1,15 @@
 import React, { useState } from "react";
 import style from "./searchbar.module.css";
-import { searchIt, getDogs, PageReset,searchItClear } from "../../Redux/actions";
+import {
+  searchIt,
+  getDogs,
+  PageReset,
+  searchItClear,
+} from "../../Redux/actions";
 import { connect } from "react-redux";
 import searchDogs from "../../functions/search";
 
-function SearchBar({ searchIt, setInput, PageReset, Dogs,searchItClear }) {
+function SearchBar({ searchIt, setInput, PageReset, Dogs, searchItClear }) {
   const [error, setError] = useState("");
 
   function handleChange(e) {
@@ -22,29 +27,30 @@ function SearchBar({ searchIt, setInput, PageReset, Dogs,searchItClear }) {
     }
   }
 
-
   return (
     <div>
-      <form className={style.fromContainer} >
+      <form className={style.fromContainer}>
         <div className={style.searchBarContainer}>
           {error && <p className={style.error}>{error}</p>}
           <input
+            className={style.text}
             type="text"
-            placeholder="Type to search!!"
-            className={style.input}
+            placeholder="Search a dog"
             onChange={handleChange}
           />
+          <input className={style.btn} type="submit" value="submit" />
         </div>
       </form>
     </div>
   );
 }
 
+
 function mapStateToProps(state) {
   return {
     Dogs: state.Dogs,
     page: state.page,
-    searched: state.searched
+    searched: state.searched,
   };
 }
 
@@ -53,7 +59,7 @@ function mapDipatchToProps(dispatch) {
     searchIt: (input) => dispatch(searchIt(input)),
     getDogs: (page) => dispatch(getDogs(page)),
     PageReset: () => dispatch(PageReset()),
-    searchItClear: () => dispatch(searchItClear())
+    searchItClear: () => dispatch(searchItClear()),
   };
 }
 

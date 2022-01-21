@@ -1,8 +1,11 @@
 :root{
-    --color-babyPowder: #FBFBF2;
-    --color-platinium: #E5E6E4;
-    --color-timberwolf: #CFD2CD;
-    --color-quicksilver: #A6A2A2;
-    --color-rocketmetallic: #847577;
-    --color-black: black;
+    --color-cultured: #F8F9FA;
+    --color-Cultured2: #E9ECEF;
+    --color-gainsboro: #DEE2E6;
+    --color-lightgray: #CED4DA;
+    --color-cadetBluecrayola: #ADB5BD;
+    --color-slateGray: #6C757D;
+    --color-DavysGray: #495057;
+    --color-Gunmetal: #343A40;
+    --color-charlestongreen: #212529;
 }
