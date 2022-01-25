@@ -44,26 +44,28 @@ function Filters({ temperaments, getTemperaments, Dogs, FilterBy, noFilter }) {
     <>
       <div className={style.container}>
         <h1 className={style.title}>Filter By</h1>
-        <select
-          name="temperaments"
-          onChange={handleTemperament}
-          className={style.getTemperaments}
-        >
-          <option value="" selected={true}>
-            Select temperaments
-          </option>
-          {temperaments &&
-            temperaments.map((m) => (
-              <option value={m.temperament} key={m.id}>
-                {m.temperament}
-              </option>
-            ))}
-        </select>
+        <div className={style.select}>
+          <select
+            name="temperaments"
+            onChange={handleTemperament}
+            className={style.getTemperaments}
+          >
+            <option value="" selected={true}>
+              Select temperaments
+            </option>
+            {temperaments &&
+              temperaments.map((m) => (
+                <option value={m.temperament} key={m.id}>
+                  {m.temperament}
+                </option>
+              ))}
+          </select>
+        </div>
         <div className={style.selectedTempe}>
           {tempe &&
             tempe.map((m) => (
               <div key={m} className={style.temperamentsSelected}>
-                <p className={style.p}>
+                <span className={style.name}>
                   {m}
                   <button
                     onClick={() => deleteTemp(m)}
@@ -71,7 +73,7 @@ function Filters({ temperaments, getTemperaments, Dogs, FilterBy, noFilter }) {
                   >
                     X
                   </button>
-                </p>
+                </span>
               </div>
             ))}
         </div>

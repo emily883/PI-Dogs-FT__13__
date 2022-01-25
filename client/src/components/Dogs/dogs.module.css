@@ -1,8 +1,13 @@
-/* .mainContainer{
-  margin:0px;
-  padding:0px;
+@import "../vars.css";
+
+.Dogs_container {
+  display: flex; 
+  flex-wrap: wrap;
+  justify-content: space-around; 
+  margin: 3vh;
 }
 
+/*
 
 .search{
   display:flex;

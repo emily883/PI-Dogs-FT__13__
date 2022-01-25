@@ -13,10 +13,7 @@ function App() {
         <Route path="/" element={<Landing/>} />
         <Route exact path="/home" element={<Home/>} />
         <Route exact path="/create" element={<Create/>} />
-        <Route
-          path="/detail/:id"
-          render={({ match }) => <Details id={match.params.id} />}
-        />
+        <Route exact path="/detail/:id" element={<Details/>} />
       </Routes>
     </>
   );

@@ -1,51 +1,53 @@
+@import "./../../vars.css";
+
 .Container {
-  border: 2px solid rgb(29 56 96);
+  border: 2px solid var(--color-Gunmetal);
   border-radius: 5px;
-  text-align: center;
-  margin: 2rem 5px 1rem 5px;
+  width: 25%;
+  margin: 2vh 1.5vh;
+  padding: 0.5vh 1vh;
   display: flex;
-  flex-direction: column;
-}
-.form{
-  display: flex;
+  align-items: center;
   flex-direction: column;
 }
 
 .title {
-  margin-top: 0.5rem;
+  margin: 1vh 2vh 2vh 2vh;
+  font-size: 1.5rem;
 }
 
 .option {
-  padding: 5px 10px;
-  margin: 5px 45px;
-  outline: none;
-  font-size: 15px;
   border-radius: 10px;
-  border: 1px solid rgb(29 56 96);
+  border: 1px solid var(--color-Gunmetal);
+  cursor: pointer;
+  background: transparent;
+  margin: auto;
+  padding: 1vh 2vh;
 }
 
 .order {
-  padding: 5px 10px;
-  margin: 5px 45px;
-  outline: none;
-  font-size: 15px;
   border-radius: 10px;
-  border: 1px solid rgb(29 56 96);
+  border: 1px solid var(--color-Gunmetal);
+  cursor: pointer;
+  background: transparent;
+  margin: 1vh 1vh 1vh 1vh;
+  padding: 1vh 2vh;
 }
 
 .ButtonSort {
   color: white;
-  background-color: #333;
+  background-color: var(--color-Gunmetal);
   border: none;
-  padding: 10px;
+  padding: 1vh 2vh;
   border-radius: 5px;
-  transition: background-color 200ms ease;
+  transition: ease 200ms ease-in-out;
   font-size: 15px;
-  margin: 15px 45px 25px;
+  margin: 1vh auto 1vh 1vh;
 }
 
 .ButtonSort:hover {
   font-weight: bold;
-  background-color: black;
+  background-color: var(--color-charlestongreen);
   cursor: pointer;
-} 
+  transition: all 200ms ease-in-out;
+}

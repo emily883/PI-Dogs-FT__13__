@@ -3,10 +3,11 @@ import { connect } from "react-redux";
 import style from "./detail.module.css";
 import { getDetails } from "../../Redux/actions";
 import Navbar from "../Navbar/navbar";
-// import Footer from "../footer/footer";
 import { FaDog } from "react-icons/fa";
+import { useParams } from "react-router-dom";
 
-function Details({ id, Detail, getDetails }) {
+function Details({Detail, getDetails }) {
+  const id = useParams().id;
   useEffect(() => {
     getDetails(id);
   }, []);

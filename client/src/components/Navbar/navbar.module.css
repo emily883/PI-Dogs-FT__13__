@@ -1,3 +1,5 @@
+@import "../vars.css";
+
 .nav {
   background: var(--color-Gunmetal);
   border: 1px solid var(--color-DavysGray);
@@ -14,22 +16,7 @@
   color: white;
 }
 
-.logo {
-  border-radius: 1rem;
-  width: auto;
-  height: 7vh;
-  margin:10px;
-}
 
-@keyframes logoAnimated {
-  50% {
-    transform: rotate(360deg);
-  }
-}
-
-.logo:hover {
-  animation: logoAnimated 3s;
-}
 
 /*
 ----------------------------------------------------------------------------
