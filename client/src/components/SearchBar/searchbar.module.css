@@ -1,46 +1,49 @@
-
-
-.fromContainer{
-    text-align: center;
-	padding-top: 25px;
-	padding-bottom: 25px;
-    
+.fromContainer {
+  text-align: center;
 }
 
-
-.btn {
-    padding: 5px;
-	border-radius: 0 2px 2px 0;
-	border: 1px solid #434141;
-	border-left: none;
-	background-color: var(--color-gainsboro);
-	font-size: medium;
+/* .btn {
+	color: white;
+	background-color: var(--color-Gunmetal);
+	border: none;
+	border-radius: 5px;
+	transition: ease 200ms ease-in-out;
+	font-size: 15px;
+	padding: 1vh;
+	margin: 1vh auto 1vh 1vh;
 }
 
 .btn:hover {
-    cursor: pointer;
+    /* cursor: pointer;
 	border-left: none;
 	background-color: var(--color-Gunmetal);
 	font-size: medium;
 	color: #eee;
+} 
+*/
+
+/* .input {
+  display: flex;
+  border: none;
+  border-radius: 5px;
+  width: 100%;
+  padding: 5px;
 }
 
+.input:focus {
+  border:none;
+} */
 
-/*
-.input{
-    display: flex;
-    border: 2px solid rgb(29 56 96);
-    border-radius: 5px;
-    width: 100%;
-    padding:5px;
+.text{
+	border: 2px solid var(--color-slateGray);
+	border-radius: 5px;
+	padding: 0.5vh;
 }
-.input::placeholder{
-    text-align: center;
+
+.text:focus {
+  outline: none;
+}
+
+/* .error {
+  color: black;
 } */
-
-
-/* .error{
-    color:black;
-} */
-
-

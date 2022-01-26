@@ -38,7 +38,7 @@ function SearchBar({ searchIt, setInput, PageReset, Dogs, searchItClear }) {
             placeholder="Search a dog"
             onChange={handleChange}
           />
-          <input className={style.btn} type="submit" value="submit" />
+          {/* <input className={style.btn} type="submit" value="submit" /> */}
         </div>
       </form>
     </div>
